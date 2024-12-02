@@ -8,7 +8,10 @@ from PyQt6.QtGui import QPainter, QColor
 import io
 import sys
 
-
+import git
+repo = git.Repo(search_parent_directories=True)
+sha = repo.head.object.hexsha
+print(sha)
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
